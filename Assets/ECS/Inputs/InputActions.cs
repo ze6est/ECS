@@ -28,7 +28,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             ""id"": ""248d21d0-b5e4-4704-a6d1-41a5fcfd9d3f"",
             ""actions"": [
                 {
-                    ""name"": ""Move"",
+                    ""name"": ""MoveDirection"",
                     ""type"": ""Value"",
                     ""id"": ""bf927dde-4744-4857-a3bc-e4f72b666e9c"",
                     ""expectedControlType"": ""Vector2"",
@@ -37,7 +37,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""DirectionLook"",
+                    ""name"": ""LookDirection"",
                     ""type"": ""Value"",
                     ""id"": ""8108d0e8-f1ce-4301-a7c6-a9d71d9c72ca"",
                     ""expectedControlType"": ""Vector2"",
@@ -54,7 +54,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveDirection"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -65,7 +65,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -76,7 +76,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -87,7 +87,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -98,7 +98,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -109,7 +109,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveDirection"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -120,7 +120,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -131,7 +131,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -142,7 +142,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -153,7 +153,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -164,7 +164,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""DirectionLook"",
+                    ""action"": ""LookDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -175,8 +175,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-        m_Player_DirectionLook = m_Player.FindAction("DirectionLook", throwIfNotFound: true);
+        m_Player_MoveDirection = m_Player.FindAction("MoveDirection", throwIfNotFound: true);
+        m_Player_LookDirection = m_Player.FindAction("LookDirection", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -238,14 +238,14 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_Move;
-    private readonly InputAction m_Player_DirectionLook;
+    private readonly InputAction m_Player_MoveDirection;
+    private readonly InputAction m_Player_LookDirection;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
         public PlayerActions(@InputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_Player_Move;
-        public InputAction @DirectionLook => m_Wrapper.m_Player_DirectionLook;
+        public InputAction @MoveDirection => m_Wrapper.m_Player_MoveDirection;
+        public InputAction @LookDirection => m_Wrapper.m_Player_LookDirection;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -255,22 +255,22 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @Move.started += instance.OnMove;
-            @Move.performed += instance.OnMove;
-            @Move.canceled += instance.OnMove;
-            @DirectionLook.started += instance.OnDirectionLook;
-            @DirectionLook.performed += instance.OnDirectionLook;
-            @DirectionLook.canceled += instance.OnDirectionLook;
+            @MoveDirection.started += instance.OnMoveDirection;
+            @MoveDirection.performed += instance.OnMoveDirection;
+            @MoveDirection.canceled += instance.OnMoveDirection;
+            @LookDirection.started += instance.OnLookDirection;
+            @LookDirection.performed += instance.OnLookDirection;
+            @LookDirection.canceled += instance.OnLookDirection;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
         {
-            @Move.started -= instance.OnMove;
-            @Move.performed -= instance.OnMove;
-            @Move.canceled -= instance.OnMove;
-            @DirectionLook.started -= instance.OnDirectionLook;
-            @DirectionLook.performed -= instance.OnDirectionLook;
-            @DirectionLook.canceled -= instance.OnDirectionLook;
+            @MoveDirection.started -= instance.OnMoveDirection;
+            @MoveDirection.performed -= instance.OnMoveDirection;
+            @MoveDirection.canceled -= instance.OnMoveDirection;
+            @LookDirection.started -= instance.OnLookDirection;
+            @LookDirection.performed -= instance.OnLookDirection;
+            @LookDirection.canceled -= instance.OnLookDirection;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -290,7 +290,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public PlayerActions @Player => new PlayerActions(this);
     public interface IPlayerActions
     {
-        void OnMove(InputAction.CallbackContext context);
-        void OnDirectionLook(InputAction.CallbackContext context);
+        void OnMoveDirection(InputAction.CallbackContext context);
+        void OnLookDirection(InputAction.CallbackContext context);
     }
 }

@@ -49,12 +49,12 @@ namespace ECS.Systems
 
         private void SetDirection()
         {
-            _move = _inputs.Player.Move.ReadValue<Vector2>();
+            _move = _inputs.Player.MoveDirection.ReadValue<Vector2>();
         }
         
         private void SetMousePosition()
         {
-            _mousePosition = _inputs.Player.DirectionLook.ReadValue<Vector2>();
+            _mousePosition = _inputs.Player.LookDirection.ReadValue<Vector2>();
         }
     }
 }

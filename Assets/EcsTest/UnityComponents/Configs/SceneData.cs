@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ECS.Data
+namespace EcsTest.UnityComponents.Configs
 {
     public class SceneData : MonoBehaviour
     {

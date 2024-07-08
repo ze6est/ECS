@@ -9,18 +9,13 @@ namespace EcsTest.Systems
     {
         private EcsWorld _ecsWorld;
         private PlayerConfigs _playerConfigs;
+        private SceneData _sceneData;
 
         private readonly EcsFilter<PlayerTag, SpeedComponent> _playersFilter;
-
+        
         public void Init()
         {
-            Object.Instantiate(_playerConfigs.Prefab, _playerConfigs.StartPoint, Quaternion.identity);
-            
-            foreach (int entity in _playersFilter)
-            {
-                ref SpeedComponent speedComponent = ref _playersFilter.Get2(entity);
-                speedComponent.Speed = _playerConfigs.Speed;
-            }
+            Object.Instantiate(_playerConfigs.Prefab, _sceneData.PlayerSpawnPoint.position, Quaternion.identity);
         }
     }
 }

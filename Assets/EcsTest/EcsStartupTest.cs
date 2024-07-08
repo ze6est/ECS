@@ -7,7 +7,8 @@ using Voody.UniLeo;
 namespace EcsTest {
     sealed class EcsStartupTest : MonoBehaviour
     {
-        [SerializeField] private PlayerConfigs _playerConfigs;
+        public PlayerConfigs _playerConfigs;
+        public SceneData _sceneData;
         
         EcsWorld _world;
         EcsSystems _systems;
@@ -28,11 +29,13 @@ namespace EcsTest {
             _systems.ConvertScene();
             
             _systems
-                .Inject(_playerConfigs)
-                .Inject(_inputActions)    
                 .Add(new PlayerInitSystem())
                 .Add(new PlayerInputSystem())
+                .Add(new LookToSystems())
                 .Add(new PlayerMovementSystem())
+                .Inject(_playerConfigs)
+                .Inject(_inputActions)
+                .Inject(_sceneData)
                 .Init ();
         }
 

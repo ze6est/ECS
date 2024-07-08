@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "LookDirection",
+                    "name": "LookPosition",
                     "type": "Value",
                     "id": "8108d0e8-f1ce-4301-a7c6-a9d71d9c72ca",
                     "expectedControlType": "Vector2",
@@ -142,7 +142,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LookDirection",
+                    "action": "LookPosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

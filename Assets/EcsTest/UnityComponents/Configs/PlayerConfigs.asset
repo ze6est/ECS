@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a0c84ac4f046740a5c7093aca7ec06, type: 3}
   m_Name: PlayerConfigs
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 1776075349326855385, guid: cfaddf12ce0ce5f45a925357dbe101a2, type: 3}
-  StartPoint: {x: 0, y: 1, z: 0}
-  Speed: 5
+  PlayerPrefab: {fileID: 1776075349326855385, guid: cfaddf12ce0ce5f45a925357dbe101a2, type: 3}
+  FireballPrefab: {fileID: -17729483253394530, guid: 179fb87d309298a428e8dc3dbf001859, type: 3}
+  PlayerSpeed: 5
+  ShootInterval: 1.5
+  FireballSpeed: 15

@@ -1,4 +1,6 @@
+using EcsTest.Components;
 using EcsTest.Systems;
+using EcsTest.Systems.Input;
 using EcsTest.UnityComponents.Configs;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -7,11 +9,11 @@ using Voody.UniLeo;
 namespace EcsTest {
     sealed class EcsStartupTest : MonoBehaviour
     {
-        public PlayerConfigs _playerConfigs;
-        public SceneData _sceneData;
+        [SerializeField] private PlayerConfigs _playerConfigs;
+        [SerializeField] private SceneData _sceneData;
         
-        EcsWorld _world;
-        EcsSystems _systems;
+        private EcsWorld _world;
+        private EcsSystems _systems;
 
         private InputActions _inputActions;
 
@@ -28,14 +30,11 @@ namespace EcsTest {
 #endif
             _systems.ConvertScene();
             
+            AddSystems();
+            
+            InjectSystems();
+            
             _systems
-                .Add(new PlayerInitSystem())
-                .Add(new PlayerInputSystem())
-                .Add(new LookToSystems())
-                .Add(new PlayerMovementSystem())
-                .Inject(_playerConfigs)
-                .Inject(_inputActions)
-                .Inject(_sceneData)
                 .Init ();
         }
 
@@ -52,6 +51,27 @@ namespace EcsTest {
                 _world.Destroy ();
                 _world = null;
             }
+        }
+
+        private void AddSystems()
+        {
+            _systems
+                .Add(new PlayerInitSystem())
+                .Add(new PlayerInputSystem())
+                .Add(new PlayerShotInputSystem())
+                .Add(new LookToSystems())
+                .Add(new PlayerMovementSystem())
+                .Add(new PlayerShotSystem())
+                .Add(new FireballSpawnSystem())
+                .Add(new FireballMoveSystem());
+        }
+
+        private void InjectSystems()
+        {
+            _systems
+                .Inject(_playerConfigs)
+                .Inject(_inputActions)
+                .Inject(_sceneData);
         }
     }
 }

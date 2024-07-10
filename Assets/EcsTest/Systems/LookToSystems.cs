@@ -7,9 +7,9 @@ namespace EcsTest.Systems
 {
     public class LookToSystems : IEcsRunSystem
     {
+        private readonly SceneData _sceneData;
+        
         private readonly EcsFilter<TransformComponent, LookDirection> _lookDirectionFilter;
-
-        private SceneData _sceneData;
         
         public void Run()
         {
@@ -23,8 +23,9 @@ namespace EcsTest.Systems
                 
                 Plane plane = new Plane(Vector3.up, transform.position);
                 Ray ray = _sceneData.CameraMain.ScreenPointToRay(lookPosition);
+                
                 if (!plane.Raycast(ray, out var hitDistance)) continue;
-
+                
                 transform.forward = ray.GetPoint(hitDistance) - transform.position;
             }
         }

@@ -7,15 +7,15 @@ namespace EcsTest.Systems
 {
     public class PlayerInitSystem : IEcsInitSystem
     {
-        private EcsWorld _ecsWorld;
-        private PlayerConfigs _playerConfigs;
-        private SceneData _sceneData;
+        private readonly EcsWorld _ecsWorld;
+        private readonly PlayerConfigs _playerConfigs;
+        private readonly SceneData _sceneData;
 
-        private readonly EcsFilter<PlayerTag, SpeedComponent> _playersFilter;
+        private readonly EcsFilter<PlayerTag, PlayerSpeed> _playersFilter;
         
         public void Init()
         {
-            Object.Instantiate(_playerConfigs.Prefab, _sceneData.PlayerSpawnPoint.position, Quaternion.identity);
+            Object.Instantiate(_playerConfigs.PlayerPrefab, _sceneData.PlayerSpawnPoint.position, Quaternion.identity);
         }
     }
 }

@@ -2,14 +2,14 @@ using EcsTest.Components;
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace EcsTest.Systems
+namespace EcsTest.Systems.Input
 {
     public class PlayerInputSystem : IEcsInitSystem, IEcsRunSystem, IEcsDestroySystem
     {
+        private readonly InputActions _inputActions;
+        
         private readonly EcsFilter<PlayerTag, Movable> _moveDirectionFilter = null;
         private readonly EcsFilter<PlayerTag, LookDirection> _lookDirectionFilter = null;
-        
-        private InputActions _inputActions;
 
         private Vector2 _moveDirectionNormalized;
         private Vector2 _lookPosition;

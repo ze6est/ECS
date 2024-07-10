@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: -3818248052666648274}
   - component: {fileID: -3281722350739331901}
   - component: {fileID: -3894018049953878555}
+  - component: {fileID: -1657458931485576914}
+  - component: {fileID: 516464629591717519}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -37,6 +39,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4258492612597196605}
+  - {fileID: 2941394194823245259}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -162,6 +165,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     LookPosition: {x: 0, y: 0}
+--- !u!114 &-1657458931485576914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776075349326855385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161b4e50a6604cfbbe11e5f77fe26403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value:
+    Interval: 0
+    IsShoot: 0
+--- !u!114 &516464629591717519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776075349326855385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccc0b7d8df214d9d80360e7dfe2ed036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value:
+    SpawnPosition: {fileID: 2941394194823245259}
+--- !u!1 &3010191648072267427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2941394194823245259}
+  m_Layer: 0
+  m_Name: FireballSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2941394194823245259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3010191648072267427}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 1.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1445025294867974046}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3716433024119425844
 PrefabInstance:
   m_ObjectHideFlags: 0

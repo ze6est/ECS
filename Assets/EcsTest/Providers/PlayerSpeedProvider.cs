@@ -5,13 +5,13 @@ using Voody.UniLeo;
 
 namespace EcsTest.Providers
 {
-    public class SpeedComponentProvider : MonoProvider<SpeedComponent>
+    public class PlayerSpeedProvider : MonoProvider<PlayerSpeed>
     {
         [SerializeField] private PlayerConfigs _playerConfigs;
         
         private void Awake()
         {
-            value.Speed = _playerConfigs.Speed;
+            value.Speed = _playerConfigs.PlayerSpeed;
         }
     }
 }

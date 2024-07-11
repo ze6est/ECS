@@ -1,4 +1,5 @@
 using EcsTest.Components;
+using EcsTest.Components.PlayerComponents;
 using Leopotam.Ecs;
 using UnityEngine;
 

@@ -1,6 +1,8 @@
-using EcsTest.Components;
 using EcsTest.Systems;
+using EcsTest.Systems.Enemies;
+using EcsTest.Systems.FireballSystem;
 using EcsTest.Systems.Input;
+using EcsTest.Systems.PlayerSystem;
 using EcsTest.UnityComponents.Configs;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -9,7 +11,7 @@ using Voody.UniLeo;
 namespace EcsTest {
     sealed class EcsStartupTest : MonoBehaviour
     {
-        [SerializeField] private PlayerConfigs _playerConfigs;
+        [SerializeField] private GameConfigs _gameConfigs;
         [SerializeField] private SceneData _sceneData;
         
         private EcsWorld _world;
@@ -61,6 +63,10 @@ namespace EcsTest {
                 .Add(new PlayerShotInputSystem())
                 .Add(new LookToSystems())
                 .Add(new PlayerMovementSystem())
+                .Add(new CameraFollowSystem())
+                .Add(new EnemiesSpawnSystem())
+                .Add(new EnemiesSetDirectionSystem())
+                .Add(new EnemiesLookToSystem())
                 .Add(new PlayerShotSystem())
                 .Add(new FireballSpawnSystem())
                 .Add(new FireballMoveSystem());
@@ -69,7 +75,7 @@ namespace EcsTest {
         private void InjectSystems()
         {
             _systems
-                .Inject(_playerConfigs)
+                .Inject(_gameConfigs)
                 .Inject(_inputActions)
                 .Inject(_sceneData);
         }

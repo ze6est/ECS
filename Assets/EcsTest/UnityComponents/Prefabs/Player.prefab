@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     Speed: 0
-  _playerConfigs: {fileID: 11400000, guid: e0df2bbf6b7a49b4891477b1a4982164, type: 2}
+  _gameConfigs: {fileID: 11400000, guid: e0df2bbf6b7a49b4891477b1a4982164, type: 2}
 --- !u!114 &-3894018049953878555
 MonoBehaviour:
   m_ObjectHideFlags: 0

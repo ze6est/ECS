@@ -38,7 +38,7 @@ namespace EcsTest.Systems.PlayerSystem
                 EcsEntity currentEntity = _players.GetEntity(entity);
                 currentEntity.Get<PlayerShootEvent>();
 
-                interval = _configs.ShootInterval;
+                interval = _configs.PlayerShootInterval;
             }
         }
     }

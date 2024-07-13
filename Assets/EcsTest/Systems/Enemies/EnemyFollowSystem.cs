@@ -36,9 +36,16 @@ namespace EcsTest.Systems.Enemies
                 {
                     float distanceToPlayer = (playerTransform.position - enemyTransform.position).sqrMagnitude;
 
-                    if (distanceToPlayer > _gameConfigs.FollowDistance * _gameConfigs.FollowDistance)
+                    if (distanceToPlayer > _gameConfigs.EnemyAttackDistance * _gameConfigs.EnemyAttackDistance)
                     {
-                        enemyRigidbody.velocity = enemyTransform.forward * _gameConfigs.EnemySpeed * Time.fixedDeltaTime;
+                        enemyRigidbody.AddForce(enemyTransform.forward * _gameConfigs.EnemySpeed);
+                        
+                        if (enemyRigidbody.velocity.sqrMagnitude > _gameConfigs.EnemySpeed * _gameConfigs.EnemySpeed) 
+                        {
+                            enemyRigidbody.velocity = enemyRigidbody.velocity.normalized * _gameConfigs.EnemySpeed;
+                        }
+                        
+                        //enemyRigidbody.velocity = enemyTransform.forward * _gameConfigs.EnemySpeed;
                     } 
                     else 
                     {

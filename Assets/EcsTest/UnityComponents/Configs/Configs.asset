@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 1776075349326855385, guid: cfaddf12ce0ce5f45a925357dbe101a2, type: 3}
   PlayerSpeed: 5
-  ShootInterval: 1.5
+  PlayerShootInterval: 2
   FireballPrefab: {fileID: -17729483253394530, guid: 179fb87d309298a428e8dc3dbf001859, type: 3}
   FireballSpeed: 10
   EnemyPrefab: {fileID: 7158558923078484285, guid: 612f63e9abe61d7448fa370929bc5f89, type: 3}
-  EnemySpeed: 4
+  EnemySpeed: 3
+  EnemyAttackDistance: 1.5
+  EnemyAttackInterval: 2
   EnemiesSpawnInterval: 2
   EnemiesSpawnRadius: 10

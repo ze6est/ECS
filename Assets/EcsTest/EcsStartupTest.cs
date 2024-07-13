@@ -94,6 +94,7 @@ namespace EcsTest {
                 .Add(new EnemiesSpawnSystem())
                 .Add(new EnemiesSetDirectionSystem())
                 .Add(new EnemiesLookToSystem())
+                .Add(new EnemyAttackSystems())
                 .Add(new PlayerShotSystem())
                 .Add(new FireballSpawnSystem())
                 .Add(new FireballMoveSystem());

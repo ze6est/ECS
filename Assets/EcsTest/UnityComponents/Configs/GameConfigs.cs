@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace EcsTest.UnityComponents.Configs
 {
@@ -8,7 +9,7 @@ namespace EcsTest.UnityComponents.Configs
         [Header("Player")]
         public GameObject PlayerPrefab;
         public float PlayerSpeed;
-        public float ShootInterval;
+        public float PlayerShootInterval;
         
         [Header("Fireball")]
         public Fireball FireballPrefab;
@@ -17,7 +18,8 @@ namespace EcsTest.UnityComponents.Configs
         [Header("Enemy")]
         public GameObject EnemyPrefab;
         public float EnemySpeed;
-        public float FollowDistance;
+        public float EnemyAttackDistance;
+        public float EnemyAttackInterval;
         public float EnemiesSpawnInterval;
         public float EnemiesSpawnRadius;
     }

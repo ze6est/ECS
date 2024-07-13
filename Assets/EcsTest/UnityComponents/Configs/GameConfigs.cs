@@ -17,6 +17,7 @@ namespace EcsTest.UnityComponents.Configs
         [Header("Enemy")]
         public GameObject EnemyPrefab;
         public float EnemySpeed;
+        public float FollowDistance;
         public float EnemiesSpawnInterval;
         public float EnemiesSpawnRadius;
     }

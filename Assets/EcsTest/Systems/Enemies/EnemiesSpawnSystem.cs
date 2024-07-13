@@ -9,10 +9,10 @@ namespace EcsTest.Systems.Enemies
 {
     public class EnemiesSpawnSystem : IEcsRunSystem
     {
-        private GameConfigs _configs;
-
         private readonly EcsFilter<EnemiesSpawnerTag, IntervalComponent, RadiusComponent> _enemiesSpawner = null;
         private readonly EcsFilter<PlayerTag, TransformComponent> _players = null;
+        
+        private GameConfigs _configs;
         
         public void Run()
         {

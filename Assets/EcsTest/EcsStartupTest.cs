@@ -1,9 +1,10 @@
-using EcsTest.Systems;
-using EcsTest.Systems.Enemies;
-using EcsTest.Systems.FireballSystem;
-using EcsTest.Systems.Input;
-using EcsTest.Systems.PlayerSystem;
-using EcsTest.UnityComponents.Configs;
+using EcsTest.CodeBase.Components;
+using EcsTest.CodeBase.Configs;
+using EcsTest.CodeBase.Systems;
+using EcsTest.CodeBase.Systems.Enemies;
+using EcsTest.CodeBase.Systems.FireballSystem;
+using EcsTest.CodeBase.Systems.Input;
+using EcsTest.CodeBase.Systems.PlayerSystem;
 using Leopotam.Ecs;
 using UnityEngine;
 using Voody.UniLeo;
@@ -42,6 +43,8 @@ namespace EcsTest {
             _lateUpdateSystems.ConvertScene();
             
             AddSystems();
+
+            AddOneFrames();
             
             InjectSystems();
 
@@ -84,7 +87,7 @@ namespace EcsTest {
         {
             _fixedUpdateSystems
                 .Add(new EnemyFollowSystem());
-            
+
             _updateSystems
                 .Add(new PlayerInitSystem())
                 .Add(new PlayerInputSystem())
@@ -97,10 +100,20 @@ namespace EcsTest {
                 .Add(new EnemyAttackSystems())
                 .Add(new PlayerShotSystem())
                 .Add(new FireballSpawnSystem())
-                .Add(new FireballMoveSystem());
+                .Add(new FireballMoveSystem())
+                .Add(new EntityInitializeSystem())
+                .Add(new DestroySystems())
+                .Add(new PlayerDamageSystem());
 
             _lateUpdateSystems
                 .Add(new CameraFollowSystem());
+        }
+
+        private void AddOneFrames()
+        {
+            _updateSystems
+                .OneFrame<InitializeEntityRequest>()
+                .OneFrame<AttackedEvent>();
         }
 
         private void InjectSystems()

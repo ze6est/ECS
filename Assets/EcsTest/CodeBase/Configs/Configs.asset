@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a0c84ac4f046740a5c7093aca7ec06, type: 3}
+  m_Name: Configs
+  m_EditorClassIdentifier: 
+  PlayerPrefab: {fileID: 1776075349326855385, guid: cfaddf12ce0ce5f45a925357dbe101a2, type: 3}
+  PlayerSpeed: 5
+  PlayerShootInterval: 2
+  PlayerHealth: 100
+  FireballPrefab: {fileID: -17729483253394530, guid: 179fb87d309298a428e8dc3dbf001859, type: 3}
+  FireballSpeed: 10
+  EnemyPrefab: {fileID: 7158558923078484285, guid: 612f63e9abe61d7448fa370929bc5f89, type: 3}
+  EnemySpeed: 3
+  EnemyDamage: 10
+  EnemyAttackDistance: 1.5
+  EnemyAttackInterval: 2
+  EnemiesSpawnInterval: 2
+  EnemiesSpawnRadius: 10
